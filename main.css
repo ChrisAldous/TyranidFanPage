@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(83, 83, 83);
+    /* background-color: linear-gradient(to right, black, gray, white); */
+
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr 1fr .5fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header header header"
+        "warrior section section section warrior2"
+        "footer footer footer footer footer";
+    height: 100vh;
+    overflow: scroll;
+}
+
+header {
+    grid-area: header;
+    /* background-image: linear-gradient(to right, white, gray, black, gray, white); */
+    background-color: black;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+header nav ul{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+header nav ul h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25%;
+    font-size: 5vh;
+    color: white;
+    transform: scaleX(1.5);
+    font-family: Cond;
+}
+
+header nav li {
+    list-style: none;
+}
+
+header nav img{
+    max-width: 60%;
+    max-height: 90%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    /* background-color: aqua; */
+}
+header nav li button {
+    border: none;
+    padding: 20px;
+    margin: 10px;
+}
+
+header nav li button:hover {
+    background-color: grey;
+    padding: 20px;
+    margin: 10px;
+}
+
+.LeftSide{
+    grid-area: warrior;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.LeftSide img {
+    opacity: 70%;
+}
+
+.RightSide{
+    grid-area: warrior2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+}
+
+.RightSide img {
+    opacity: 70%;
+}
+
+.back{
+    grid-area: section;
+    display: flex;
+    place-items: center;
+    position: relative;
+    background-color: black;
+    justify-content: center;
+}
+
+.back::before{
+    background-image: url("../img/galactic_background_invasion_map.webp");
+    background-size: cover;
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.Home {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". . title . ."
+        ". quote quote quote ."
+        ". . . . ."
+        ". . . . .";
+    isolation: isolate;
+    z-index: 2;
+}
+
+.Home h1 {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+}
+
+.Home p {
+    text-indent: 1cm;
+    grid-area: quote;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: large;
+}
+
+
+.Gallery{
+    padding: 20px;
+    display: none;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 2;
+    overflow: scroll;
+}
+
+.Gallery figure{
+    display: inline-block;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 1/ 1;
+
+}
+
+.Gallery img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    /* max-height: 100%; */
+    object-fit: cover;
+    flex: 1;
+
+}
+
+.Gallery figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5rem 1rem 1rem;
+    background: linear-gradient(to top, hsla(230, 40%, 5%, 0.95), hsla(230, 40%, 5%, 0));
+    color: white;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.History {
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem;
+    z-index: 2;
+    max-width: 100%;
+}
+
+.History h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.History p {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-indent: 1cm;
+    color: white;
+    margin: 10px;
+}
+
+.History figure{
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    max-width: 100%;
+    max-height: 100%;
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1/ 1;
+    /* float: right; */
+}
+
+.History img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    object-fit: cover;
+    flex: 1;
+}
+
+.wrap {
+    float: right; 
+   margin: 5px;
+}
+
+.History figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5rem 1rem 1rem;
+    background: linear-gradient(to top, hsla(230, 40%, 5%, 0.95), hsla(230, 40%, 5%, 0));
+    color: white;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+
+.History .videos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    bottom: 0;
+    height: 80px; /* Adjust height as needed */
+}
+
+@media (max-width: 700px) {
+    body{
+        background-color: rgb(83, 83, 83);
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "header header header "
+            " section section section "
+            " footer footer footer ";
+        height: 100vh;
+        overflow: scroll;
+    }
+
+    header nav ul h1 {
+        display: none;
+    }
+
+    .LeftSide {
+        display: none;
+    }
+
+    .RightSide {
+        display: none;
+    }
+
+    .Gallery{
+        padding: 10px;
+        display: none;
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        z-index: 2;
+        overflow: scroll;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+    .Gallery{
+        padding: 15px;
+        display: none;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        z-index: 2;
+        overflow: scroll;
+    }
+}
