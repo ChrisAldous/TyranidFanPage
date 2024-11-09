@@ -16,3 +16,19 @@ function hideShow(sectionName) {
         selectedSection.style.display = 'flex';
     }
 }
+
+document.getElementById("themeChange").addEventListener("click", function() {
+    const themeLink = document.getElementById("themeStylesheet");
+  
+    // If theme.css isn't already loaded, add it
+    if (!themeLink) {
+      const link = document.createElement("link");
+      link.id = "themeStylesheet";
+      link.rel = "stylesheet";
+      link.href = "css/theme.css";
+      document.head.appendChild(link);
+    } else {
+      // If theme.css is loaded, remove it
+      themeLink.parentNode.removeChild(themeLink);
+    }
+  });
